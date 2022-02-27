@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WifiScan</string>
+    <string name="searching_progress">Rechercher du nombre de réseaux en cours…</string>
+    <string name="network_count">Nombre de réseaux : %1$d</string>
 </resources>
