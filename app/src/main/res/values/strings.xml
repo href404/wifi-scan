@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">WifiScan</string>
     <string name="searching_progress">Rechercher du nombre de réseaux en cours…</string>
-    <string name="network_count">Nombre de réseaux : %1$d</string>
+    <string name="network_count">Nombre de réseaux</string>
+    <string name="ssid">SSID</string>
+    <string name="frequency">Fréquence</string>
+    <string name="level">Niveau</string>
+    <string name="in_progress">En cours…</string>
 </resources>

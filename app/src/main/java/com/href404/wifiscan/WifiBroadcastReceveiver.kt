@@ -4,11 +4,14 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
+import androidx.appcompat.app.AppCompatActivity
 
-class WifiBroadcastReceveiver(
-    private val wifiManager: WifiManager
-) : BroadcastReceiver() {
-    override fun onReceive(context: Context?, intent: Intent?) {
+class WifiBroadcastReceveiver : BroadcastReceiver() {
+
+    override fun onReceive(context: Context, intent: Intent) {
+        val wifiManager = context.applicationContext
+            .getSystemService(AppCompatActivity.WIFI_SERVICE) as WifiManager
+
         val networks = wifiManager.scanResults
         NetworkService.instance.notify(networks)
     }
