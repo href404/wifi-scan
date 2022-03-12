@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    android:rowCount="4"
-    android:columnCount="2"
-    android:useDefaultMargins="true"
-    tools:context=".HomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:text="@string/network_count"
-        android:layout_columnWeight="1" />
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.href404.wifiscan.HomeViewModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/network_counter"
-        android:text="@string/in_progress"
-        android:textStyle="bold"
-        android:layout_columnWeight="1" />
+    <GridLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:rowCount="4"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+        tools:context=".HomeFragment">
 
-    <TextView
-        android:text="@string/ssid"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@string/network_count"
+            android:layout_columnWeight="1" />
 
-    <TextView
-        android:id="@+id/ssid"
-        android:text="@string/in_progress"
-        android:textStyle="bold"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@{viewmodel.networkCounter}"
+            android:textStyle="bold"
+            android:layout_columnWeight="1" />
 
-    <TextView
-        android:text="@string/frequency"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@string/ssid"
+            android:layout_columnWeight="1" />
 
-    <TextView
-        android:id="@+id/frequency"
-        android:text="@string/in_progress"
-        android:textStyle="bold"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@{viewmodel.ssid}"
+            android:textStyle="bold"
+            android:layout_columnWeight="1" />
 
-    <TextView
-        android:text="@string/level"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@string/frequency"
+            android:layout_columnWeight="1" />
 
-    <TextView
-        android:id="@+id/level"
-        android:text="@string/in_progress"
-        android:textStyle="bold"
-        android:layout_columnWeight="1" />
+        <TextView
+            android:text="@{viewmodel.frequency}"
+            android:textStyle="bold"
+            android:layout_columnWeight="1" />
 
-</GridLayout>
+        <TextView
+            android:text="@string/level"
+            android:layout_columnWeight="1" />
+
+        <TextView
+            android:text="@{viewmodel.level}"
+            android:textStyle="bold"
+            android:layout_columnWeight="1" />
+
+    </GridLayout>
+</layout>
