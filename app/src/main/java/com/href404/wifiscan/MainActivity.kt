@@ -4,15 +4,15 @@ import android.content.IntentFilter
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiManager
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.href404.wifiscan.databinding.MainActivityBinding
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity(), NetworkListener {
 
     private lateinit var binding: MainActivityBinding
-    private val networkService = NetworkService.instance
-    private val wifiReceiver = WifiBroadcastReceveiver()
+    private val networkService: NetworkService by inject()
+    private val wifiReceiver = WifiBroadcastReceveiver(networkService)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,23 +2,25 @@ package com.href404.wifiscan
 
 import android.net.wifi.ScanResult
 
-class NetworkService private constructor() {
+interface NetworkService {
+    fun subscribe(listener: NetworkListener)
+    fun unsubscribe(listener: NetworkListener)
+    fun notify(networks: List<ScanResult>)
+}
+
+class NetworkServiceImpl : NetworkService {
 
     private val listeners = mutableListOf<NetworkListener>()
 
-    fun subscribe(listener: NetworkListener) {
+    override fun subscribe(listener: NetworkListener) {
         listeners.add(listener)
     }
 
-    fun unsubscribe(listener: NetworkListener) {
+    override fun unsubscribe(listener: NetworkListener) {
         listeners.filter { it == listener }
     }
 
-    fun notify(networks: List<ScanResult>) {
+    override fun notify(networks: List<ScanResult>) {
         listeners.forEach { it.onScanResult(networks) }
-    }
-
-    companion object {
-        val instance by lazy { NetworkService() }
     }
 }
