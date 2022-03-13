@@ -21,6 +21,7 @@
             android:layout_columnWeight="1" />
 
         <TextView
+            android:id="@+id/network_counter"
             android:text="@{viewmodel.networkCounter}"
             android:textStyle="bold"
             android:layout_columnWeight="1" />
@@ -30,6 +31,7 @@
             android:layout_columnWeight="1" />
 
         <TextView
+            android:id="@+id/ssid"
             android:text="@{viewmodel.ssid}"
             android:textStyle="bold"
             android:layout_columnWeight="1" />
@@ -39,6 +41,7 @@
             android:layout_columnWeight="1" />
 
         <TextView
+            android:id="@+id/frequency"
             android:text="@{viewmodel.frequency}"
             android:textStyle="bold"
             android:layout_columnWeight="1" />
@@ -48,6 +51,7 @@
             android:layout_columnWeight="1" />
 
         <TextView
+            android:id="@+id/level"
             android:text="@{viewmodel.level}"
             android:textStyle="bold"
             android:layout_columnWeight="1" />
