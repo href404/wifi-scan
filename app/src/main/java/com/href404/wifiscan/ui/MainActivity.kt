@@ -5,14 +5,14 @@ import android.net.wifi.WifiManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.href404.wifiscan.R
-import com.href404.wifiscan.WifiBroadcastReceveiver
 import com.href404.wifiscan.services.NetworkService
+import com.href404.wifiscan.services.WifiBroadcastReceiver
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
     private val networkService: NetworkService by inject()
-    private val wifiReceiver = WifiBroadcastReceveiver(networkService)
+    private val wifiReceiver = WifiBroadcastReceiver(networkService)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
