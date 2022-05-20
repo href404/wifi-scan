@@ -1,4 +1,4 @@
-package com.href404.wifiscan
+package com.href404.wifiscan.services
 
 import android.net.wifi.ScanResult
 

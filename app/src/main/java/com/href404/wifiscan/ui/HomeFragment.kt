@@ -1,4 +1,4 @@
-package com.href404.wifiscan
+package com.href404.wifiscan.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,19 +10,20 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: HomeFragmentBinding
     private val viewModel by viewModel<HomeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = HomeFragmentBinding.inflate(layoutInflater, container, false)
-        binding.viewmodel = viewModel
-        binding.lifecycleOwner = viewLifecycleOwner
+    ): View = HomeFragmentBinding.inflate(layoutInflater, container, false)
+        .apply {
+            viewmodel = viewModel
+            lifecycleOwner = viewLifecycleOwner
+        }.root
 
-        viewModel.onCreateView()
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.onViewCreated(view.context)
     }
 
     override fun onDestroyView() {

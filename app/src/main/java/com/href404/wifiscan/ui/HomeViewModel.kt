@@ -1,21 +1,21 @@
-package com.href404.wifiscan
+package com.href404.wifiscan.ui
 
 import android.content.Context
 import android.net.wifi.ScanResult
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.href404.wifiscan.R
+import com.href404.wifiscan.services.NetworkListener
+import com.href404.wifiscan.services.NetworkService
 
-class HomeViewModel(
-    private val networkService: NetworkService,
-    private val applicationContext: Context
-) : ViewModel(), NetworkListener {
+class HomeViewModel(private val networkService: NetworkService) : ViewModel(), NetworkListener {
 
     val networkCounter: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val ssid: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val frequency: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val level: MutableLiveData<String> by lazy { MutableLiveData<String>() }
 
-    fun onCreateView() {
+    fun onViewCreated(applicationContext: Context) {
         networkService.subscribe(this)
 
         networkCounter.value = applicationContext.getString(R.string.in_progress)

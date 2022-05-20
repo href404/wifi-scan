@@ -5,5 +5,5 @@
     android:id="@+id/fragment_container_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.href404.wifiscan.HomeFragment"
-    tools:context=".MainActivity" />
+    android:name="com.href404.wifiscan.ui.HomeFragment"
+    tools:context=".ui.MainActivity" />

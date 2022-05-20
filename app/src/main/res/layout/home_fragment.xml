@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.href404.wifiscan.HomeViewModel" />
+            type="com.href404.wifiscan.ui.HomeViewModel" />
     </data>
 
     <GridLayout android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:rowCount="4"
         android:columnCount="2"
         android:useDefaultMargins="true"
-        tools:context=".HomeFragment">
+        tools:context=".ui.HomeFragment">
 
         <TextView
             android:text="@string/network_count"
