@@ -17,12 +17,16 @@ class NetworkServiceImpl : NetworkService {
         listeners.remove(listener)
     }
 
+    override fun isSubscribe(listener: NetworkListener): Boolean {
+        return listeners.contains(listener)
+    }
+
     override fun notify(networks: List<ScanResult>) {
         listeners.forEach { it.onScanResult(networks) }
     }
 
-    override fun scan(applicationContext: Context): Boolean {
-        val wifiManager = applicationContext.getSystemService(AppCompatActivity.WIFI_SERVICE) as WifiManager
+    override fun scan(context: Context): Boolean {
+        val wifiManager = context.applicationContext.getSystemService(AppCompatActivity.WIFI_SERVICE) as WifiManager
         return wifiManager.startScan()
     }
 }

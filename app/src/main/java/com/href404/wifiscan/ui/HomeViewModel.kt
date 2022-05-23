@@ -37,7 +37,7 @@ class HomeViewModel(private val networkService: NetworkService) : ViewModel(), N
         level.value = network.level.toString()
     }
 
-    fun scan(applicationContext: Context) {
-        networkService.scan(applicationContext)
+    fun scan(context: Context) {
+        networkService.scan(context)
     }
 }
