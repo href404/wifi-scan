@@ -36,7 +36,7 @@ class HomeFragmentTest {
 
         scenario.withFragment {
             binding.buttonScan.performClick()
-            binding.viewmodel.scan()
+            binding.viewmodel.scan(appContext)
         }
 
         scenario.close()

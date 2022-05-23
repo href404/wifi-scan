@@ -12,6 +12,7 @@ class NetworkServiceImplTest {
         val networkListener = object : NetworkListener {
             override fun onScanResult(networks: List<ScanResult>) {
                 isListenerCalled = true
+                Assert.assertEquals(0, networks.size)
             }
         }
 
@@ -28,6 +29,7 @@ class NetworkServiceImplTest {
         val networkListener = object : NetworkListener {
             override fun onScanResult(networks: List<ScanResult>) {
                 isListenerCalled = true
+                Assert.assertEquals(0, networks.size)
             }
         }
 
