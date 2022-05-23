@@ -14,7 +14,7 @@ class NetworkServiceImpl : NetworkService {
     }
 
     override fun unsubscribe(listener: NetworkListener) {
-        listeners.filter { it == listener }
+        listeners.remove(listener)
     }
 
     override fun notify(networks: List<ScanResult>) {
