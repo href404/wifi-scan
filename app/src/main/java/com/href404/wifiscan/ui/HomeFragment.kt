@@ -10,16 +10,21 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
+    lateinit var binding: HomeFragmentBinding
     private val viewModel by viewModel<HomeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = HomeFragmentBinding.inflate(layoutInflater, container, false)
-        .apply {
-            viewmodel = viewModel
-            lifecycleOwner = viewLifecycleOwner
-        }.root
+    ): View {
+        binding = HomeFragmentBinding.inflate(layoutInflater, container, false)
+            .apply {
+                viewmodel = viewModel
+                lifecycleOwner = viewLifecycleOwner
+            }
+
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

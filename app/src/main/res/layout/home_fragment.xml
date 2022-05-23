@@ -56,5 +56,9 @@
             android:textStyle="bold"
             android:layout_columnWeight="1" />
 
+        <Button
+            android:id="@+id/buttonScan"
+            android:visibility="gone" />
+
     </GridLayout>
 </layout>
